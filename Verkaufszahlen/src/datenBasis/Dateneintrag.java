@@ -4,12 +4,17 @@ public class Dateneintrag {
 	private String datenname;
 	private double datenwert;
 	
-	public void setDatenname (String v_name) {
-		datenname = v_name;
+	public Dateneintrag (String datenname, double datenwert) {
+		this.datenname = datenname;
+		this.datenwert = datenwert;
 	}
 	
-	public void setDatenwert (double v_wert) {
-		datenwert = v_wert;
+	public void setDatenname (String datenname) {
+		this.datenname = datenname;
+	}
+	
+	public void setDatenwert (double datenwert) {
+		this.datenwert = datenwert;
 	}
 
 	void erhoeheAbsolut (int wert) {
