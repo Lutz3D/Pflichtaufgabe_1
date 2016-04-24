@@ -3,6 +3,7 @@ package datenBasis;
 import java.util.ArrayList;
 
 public class Datensatz {
+	int i= 0;
 	public String titel;
 	public String dateneinheit;
 	public ArrayList <Dateneintrag> daten = new ArrayList<Dateneintrag> ();
@@ -13,19 +14,19 @@ public class Datensatz {
 	}
 	
 	public void add (Dateneintrag eintrag) {
-		Datensatz eintrag1 = new Datensatz ("Hans", "werner");
+		daten.add(eintrag);
 	}
 
-	int getAnzahlDateneintrage() {
-		return Dateneintrag.size();
+	public int getAnzahlDateneintrage() {
+		return daten.size();
 	}
 	
-	int DatenEintrag getDateneintrag(int n) {
-		return Dateneintrag;
-	}
+	//public int getDateneintrag(int n) {
+	//	return daten.get(n);
+	//}
 	
-	int getGesamtwert () {
+	//int getGesamtwert () {
 		
-	}
+	//}
 	
 }

@@ -28,6 +28,7 @@ public class Dateneintrag {
 		datenwert = (datenwert/gesamtWert)*100;
 		return (int) datenwert;
 	}
-	
+
+		
 
 }
