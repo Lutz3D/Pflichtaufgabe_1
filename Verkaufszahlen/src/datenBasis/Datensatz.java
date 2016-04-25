@@ -26,13 +26,9 @@ public class Datensatz {
 	
 	public int getGesamtwert () {
 		int sum = 0;
-		for (int i = 0; i < daten.size(); i++) {
-			sum += daten.get(i);	
+		for (Dateneintrag dateneintrag: daten )
+			sum = sum + dateneintrag.getDatenwert();
 		return sum;
-		
-			
-		}
-		
 	}
 	
 }

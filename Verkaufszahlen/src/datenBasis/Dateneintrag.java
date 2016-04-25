@@ -2,9 +2,9 @@ package datenBasis;
 
 public class Dateneintrag {
 	private String datenname;
-	private double datenwert;
+	private int datenwert;
 	
-	public Dateneintrag (String datenname, double datenwert) {
+	public Dateneintrag (String datenname, int datenwert) {
 		this.datenname = datenname;
 		this.datenwert = datenwert;
 	}
@@ -13,7 +13,15 @@ public class Dateneintrag {
 		this.datenname = datenname;
 	}
 	
-	public void setDatenwert (double datenwert) {
+	public int getDatenwert () {
+		return datenwert;
+	}
+	
+	public String getDatenname () {
+		return datenname;
+	}
+	
+	public void setDatenwert (int datenwert) {
 		this.datenwert = datenwert;
 	}
 
