@@ -1,10 +1,15 @@
 package datenBasis;
 
 public class StatistischesDiagramm {
+	
+		
 	public void ausgabe () {
-		for(Dateneintrag each: verkaufszahlen) {
-			System.out.printf("Verkaufszahlen%n")
+			for(Dateneintrag hans: Datensatz.daten)
+			System.out.printf("", hans.getDatenname()  );
+			
+			
 		}
 	}
 
-}
+
+

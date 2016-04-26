@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Datensatz {
 	public String titel;
 	public String dateneinheit;
-	public ArrayList <Dateneintrag> daten = new ArrayList<Dateneintrag> ();
+	public static ArrayList <Dateneintrag> daten = new ArrayList<Dateneintrag> ();
 	
 	public Datensatz (String titel, String dateneinheit) {
 		this.titel = titel;
