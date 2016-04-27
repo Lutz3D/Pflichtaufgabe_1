@@ -10,14 +10,9 @@ public class App {
 		verkaufszahlen.add(new Dateneintrag("Süd", 140000));
 		verkaufszahlen.add(new Dateneintrag("West", 900000));
 		verkaufszahlen.add(new Dateneintrag("Ost", 120000));
-<<<<<<< HEAD
-	
-		StatistischesDiagramm.ausgabe();
 		
-=======
-						
 		StatistischesDiagramm.ausgabe();
->>>>>>> branch 'master' of ssh://git@github.com/Lutz3D/Pflichtaufgabe_1.git
+
 		
 	}
 
