@@ -2,6 +2,7 @@ package datenBasis;
 
 public class App {
 
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	
@@ -10,10 +11,11 @@ public class App {
 		verkaufszahlen.add(new Dateneintrag("Süd", 140000));
 		verkaufszahlen.add(new Dateneintrag("West", 900000));
 		verkaufszahlen.add(new Dateneintrag("Ost", 120000));
+				
+		RelativesDiagramm diagramm2 = new RelativesDiagramm(verkaufszahlen);
+		diagramm2.ausgabe();
 		
-		StatistischesDiagramm.ausgabe();
-
-		
+		new Stern(verkaufszahlen).sterne();
 	}
 
 }

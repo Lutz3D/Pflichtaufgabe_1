@@ -25,11 +25,15 @@ public class Datensatz {
 	}
 	
 	
-	public static int getGesamtwert () {
+	public int getGesamtwert () {
 		int sum = 0;
-		for (Dateneintrag dateneintrag: daten )
-			sum = sum + dateneintrag.getDatenwert();
+		for (Dateneintrag dateneintrag : daten){
+			sum += dateneintrag.getDatenwert();
+		}
 		return sum;
 	}
 	
-}
+
+	}
+	
+

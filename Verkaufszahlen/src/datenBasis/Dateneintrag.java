@@ -33,10 +33,17 @@ public class Dateneintrag {
 		datenwert = datenwert + (datenwert*(aenderung/100));
 	}
 	public int relativerAnteilVon (int gesamtWert) {
-		datenwert = (datenwert/gesamtWert)*100;
-		return (int) datenwert;
+		int zwischenwert = gesamtWert /100;
+		int ergebnis = this.datenwert/zwischenwert;
+		return (ergebnis);
 	}
-
+	@Override
+	public String toString(){
+		return datenname + " "+datenwert;
+	}
+	
 		
-
-}
+	}
+	
+	
+	
