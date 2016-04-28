@@ -14,20 +14,20 @@ public Stern(Datensatz daten) {
 		String z = "*";
 		String y = "-";
 		int x = 0;
-		int tmp;
+		int tmp = 0;
 		String prozentausgabe = "";
 		int anzahlDaten = daten.getAnzahlDateneintrage();
 		for (int i = 0; i < anzahlDaten; i++) {
 			Dateneintrag dateneintrag = daten.getDateneintrag(i);
 			tmp = dateneintrag.relativerAnteilVon(gesamtWert);
 			x = tmp/10;
-			if (x > 1) 
-			for (int j = 0; j < x; j++) {
-				prozentausgabe = prozentausgabe.concat(z);
-				
+			if (x > 1) {
+			prozentausgabe = prozentausgabe.concat(z);
+			
 			}	
-		
+			
 		}
+		
 		return prozentausgabe;
 	}
 		
