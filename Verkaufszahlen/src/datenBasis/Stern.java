@@ -9,8 +9,8 @@ public Stern(Datensatz daten) {
 	}
 
 	
-	
-	public String sterne (int gesamtWert) {
+	//OLD
+	/*public String sterne (int gesamtWert) {
 		String z = "*";
 		String y = "-";
 		int x = 0;
@@ -29,19 +29,35 @@ public Stern(Datensatz daten) {
 		}
 		
 		return prozentausgabe;
-	}
+	} */
+
+
+
 		
 		public void ausgabe () {
 			System.out.println(" " + daten.titel);
 			String dateneinheit = daten.dateneinheit;
 			int gesamtWert = daten.getGesamtwert();
-		
 			int anzahlDaten = daten.getAnzahlDateneintrage();
+			String z = "*";
+			String y = "-";
+			int x = 0;
+			int tmp = 0;
+			String prozentausgabe = "";
 			for (int i = 0; i < anzahlDaten; i++) {
-					
 					Dateneintrag dateneintrag = daten.getDateneintrag(i);
-					System.out.println("" + dateneintrag + " " + dateneinheit + " " +dateneintrag.relativerAnteilVon(gesamtWert) + "%" + " " + sterne(gesamtWert)) ;					}
-			System.out.println("Gesamt " + gesamtWert);
+					tmp = dateneintrag.relativerAnteilVon(gesamtWert);
+					x = tmp/10;
+					if ( x < 1) {
+						prozentausgabe = y;
+					} else if (x>1) {
+						prozentausgabe = "";
+						for (int n =0; n < x; n++) {
+							prozentausgabe = prozentausgabe.concat(z);
+						}
+					}			
+					System.out.println("" + dateneintrag + " " + dateneinheit + " " +dateneintrag.relativerAnteilVon(gesamtWert) + "%" + " " + prozentausgabe) ;					}
+					System.out.println("Gesamt " + gesamtWert);
 			
 			
 
