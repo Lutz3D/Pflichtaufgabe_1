@@ -58,6 +58,7 @@ public Stern(Datensatz daten) {
 					}			
 					System.out.println("" + dateneintrag + " " + dateneinheit + " " +dateneintrag.relativerAnteilVon(gesamtWert) + "%" + " " + prozentausgabe) ;					}
 					System.out.println("Gesamt " + gesamtWert);
+					System.out.println("Die größte Summe: " + daten.getGroesstenDateneintrag());
 			
 			
 

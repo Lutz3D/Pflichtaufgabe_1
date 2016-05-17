@@ -33,6 +33,21 @@ public class Datensatz {
 		return sum;
 	}
 	
+	public Dateneintrag getGroesstenDateneintrag() {
+		int anzahlDaten = getAnzahlDateneintrage();
+		Dateneintrag groesterDateneintrag;
+		groesterDateneintrag = getDateneintrag(0);
+		for (int i = 1; i< anzahlDaten; i++) {
+			Dateneintrag aktuellerDateneintrag;
+			aktuellerDateneintrag = getDateneintrag(i);
+			if (groesterDateneintrag.getDatenwert() < aktuellerDateneintrag.getDatenwert()) {
+				groesterDateneintrag = aktuellerDateneintrag;
+			}
+		}
+				return groesterDateneintrag;
+			
+		
+	}
 
 	}
 	

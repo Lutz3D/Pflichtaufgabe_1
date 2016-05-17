@@ -12,7 +12,7 @@ public class App {
 		verkaufszahlen.add(new Dateneintrag("West", 900000));
 		verkaufszahlen.add(new Dateneintrag("Ost", 120000));
 				
-		RelativesDiagramm diagramm2 = new RelativesDiagramm(verkaufszahlen);
+		//RelativesDiagramm diagramm2 = new RelativesDiagramm(verkaufszahlen);
 		//diagramm2.ausgabe();
 		
 		Stern diagramm3 = new Stern(verkaufszahlen);
