@@ -17,6 +17,7 @@ public class App {
 		
 		Stern diagramm3 = new Stern(verkaufszahlen);
 		diagramm3.ausgabe();
+		
 	}
 
 }

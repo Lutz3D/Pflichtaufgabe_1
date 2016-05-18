@@ -48,7 +48,23 @@ public class Datensatz {
 			
 		
 	}
+	
+	public int durschnitt () {
+		int gesamt = getGesamtwert();
+		int anzahl = getAnzahlDateneintrage();
+		double d_Schnitt = gesamt/anzahl;
+			
+	return (int) d_Schnitt;
 
 	}
 	
+public boolean istVorhanden(String suchbegriff) {
+	for (Dateneintrag each: daten) {
+		if (each.getDatenname() == suchbegriff) return true;
+	}
+	return false;
+}
+
+
+}
 
