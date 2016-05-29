@@ -15,8 +15,15 @@ public class App {
 		//RelativesDiagramm diagramm2 = new RelativesDiagramm(verkaufszahlen);
 		//diagramm2.ausgabe();
 		
-		Stern diagramm3 = new Stern(verkaufszahlen);
-		diagramm3.ausgabe();
+		//Stern diagramm3 = new Stern(verkaufszahlen);
+		//diagramm3.ausgabe();
+		
+		StatistischesDiagramm diagramm = new StatistischesDiagramm(verkaufszahlen);
+		diagramm.ausgabe();
+		
+		JDatensatzEditor frame = new JDatensatzEditor ();
+		
+		
 		
 	}
 
