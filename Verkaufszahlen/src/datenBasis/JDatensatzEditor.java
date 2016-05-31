@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -21,16 +22,19 @@ public class JDatensatzEditor extends JFrame{
 	private JTextField inputSued = new JTextField();
 	private JTextField inputWest = new JTextField();
 	private JTextField inputOst = new JTextField();
+	private Datensatz datensatz = null;
+	private ArrayList <Datensatz> daten = new ArrayList <Datensatz> ();
+	private int index = -1;
 	
-	public JDatensatzEditor ( ) {
-		super (daten);
+	public JDatensatzEditor (Datensatz verkaufszahlen ) {
+		super ("Verkaufs-Zahlen");
+		this.datensatz = verkaufszahlen;
 		buildGui();
 	}
 	private void buildGui () {
 		Font font = new Font ("Serif" , Font.BOLD , 30);
+						
 		
-		JButton btnNew = new JButton ("Neuer Eintrag");
-		btnNew.setFont(font);
 		
 		JPanel verkaufsPanel = new JPanel ();
 		
@@ -38,42 +42,59 @@ public class JDatensatzEditor extends JFrame{
 		verkaufsPanel.setLayout(bl);
 		
 		JLabel lbNord = new JLabel ("Nord");
-		JLabel lbSued = new JLabel ("Süd");
-		JLabel lbWest = new JLabel ("West");
-		JLabel lbOst = new JLabel ("Ost");
-		
 		lbNord.setFont(font);
-		lbSued.setFont(font);
-		lbWest.setFont(font);
-		lbOst.setFont(font);
-		
 		inputNord.setFont(font);
-		inputSued.setFont(font);
-		inputWest.setFont(font);
-		inputOst.setFont(font);
-		
-		verkaufsPanel.add(lbOst);
-		verkaufsPanel.add(inputOst);
-		verkaufsPanel.add(lbSued);
-		verkaufsPanel.add(inputSued);
-		verkaufsPanel.add(lbWest);
-		verkaufsPanel.add(inputWest);
 		verkaufsPanel.add(lbNord);
 		verkaufsPanel.add(inputNord);
 		
-		JPanel interactionPanel = new JPanel (new FlowLayout ( FlowLayout.LEFT));
-		interactionPanel.add(btnNew);
+		JLabel lbSued = new JLabel ("Süd");
+		lbSued.setFont(font);
+		inputSued.setFont(font);
+		verkaufsPanel.add(lbSued);
+		verkaufsPanel.add(inputSued);
 		
-		add(btnNew, BorderLayout.SOUTH);
-		add (interactionPanel, BorderLayout.SOUTH);
+		JLabel lbWest = new JLabel ("West");
+		lbWest.setFont(font);
+		inputWest.setFont(font);
+		verkaufsPanel.add(lbWest);
+		verkaufsPanel.add(inputWest);
 		
+		JLabel lbOst = new JLabel ("Ost");
+		lbOst.setFont(font);
+		inputOst.setFont(font);
+		verkaufsPanel.add(lbOst);
+		verkaufsPanel.add(inputOst);
+	
+		JButton btnNew = new JButton ("Neuer Eintrag");
+		btnNew.setFont(font);
+				
+		
+		JPanel actionPanel = new JPanel (new FlowLayout (FlowLayout.LEFT));
+		actionPanel.add(btnNew);
+		
+		
+		add (actionPanel, BorderLayout.SOUTH);
+		add (verkaufsPanel, BorderLayout.CENTER);
+		pack();
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		
-		
-		
+			
+	}
+	
+	public void addVerkaufsZahlen (Datensatz z) {
+		daten.add(z);
+		datensatz = z;
+		index = daten.size() -1;
+		showVerkaufsZahlen();
+	}
+	
+	public void showVerkaufsZahlen() {
+		if (datensatz == null) return;
+		inputWest.setText(Integer.toString(datensatz.getDateneintrag(0)));
 		
 	}
 	
 
 
-}
+} //ENDE der Klasse JDatenSatzEditor
