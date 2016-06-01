@@ -26,6 +26,11 @@ public class App {
 		
 		//frame.buildGui();
 		
+		frame.addVerkaufsZahlen(verkaufszahlen);
+		
+		
+		
+		
 		
 		
 		

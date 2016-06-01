@@ -22,13 +22,13 @@ public class JDatensatzEditor extends JFrame{
 	private JTextField inputSued = new JTextField();
 	private JTextField inputWest = new JTextField();
 	private JTextField inputOst = new JTextField();
-	private Datensatz datensatz = null;
+	private Datensatz verkaufszahlen = null;
 	private ArrayList <Datensatz> daten = new ArrayList <Datensatz> ();
 	private int index = -1;
 	
 	public JDatensatzEditor (Datensatz verkaufszahlen ) {
 		super ("Verkaufs-Zahlen");
-		this.datensatz = verkaufszahlen;
+		this.verkaufszahlen = verkaufszahlen;
 		buildGui();
 	}
 	private void buildGui () {
@@ -78,21 +78,43 @@ public class JDatensatzEditor extends JFrame{
 		pack();
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		ActionListener hans = new NewEntry (this);
+		btnNew.addActionListener(hans);
 
 			
 	}
 	
 	public void addVerkaufsZahlen (Datensatz z) {
 		daten.add(z);
-		datensatz = z;
+		verkaufszahlen = z;
 		index = daten.size() -1;
 		showVerkaufsZahlen();
 	}
 	
 	public void showVerkaufsZahlen() {
-		if (datensatz == null) return;
-		inputWest.setText(Integer.toString(datensatz.getDateneintrag(0)));
+		if (verkaufszahlen == null) return;
+		inputNord.setText(Integer.toString(verkaufszahlen.getDateneintrag(0).getDatenwert()));
+		inputSued.setText(Integer.toString(verkaufszahlen.getDateneintrag(1).getDatenwert()));
+		inputWest.setText(Integer.toString(verkaufszahlen.getDateneintrag(2).getDatenwert()));
+		inputOst.setText(Integer.toString(verkaufszahlen.getDateneintrag(3).getDatenwert()));
 		
+	}
+	
+	public void newEntry () {
+		Font font = new Font ("Serif" , Font.BOLD , 30);
+		JPanel newPanel = new JPanel ();
+		BoxLayout bl2 = new BoxLayout (newPanel, BoxLayout.Y_AXIS);
+		newPanel.setLayout(bl2);
+		JLabel lbUnbenannt = new JLabel ("Unbenannt");
+		JTextField inputUnbenannt = new JTextField ();
+		lbUnbenannt.setFont(font);
+		inputUnbenannt.setFont(font);
+		newPanel.add(lbUnbenannt);
+		newPanel.add(inputUnbenannt);
+		add(newPanel, BorderLayout.PAGE_END);
+		pack();
+		showVerkaufsZahlen();
 	}
 	
 
