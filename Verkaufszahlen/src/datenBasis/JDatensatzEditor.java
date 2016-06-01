@@ -31,7 +31,7 @@ public class JDatensatzEditor extends JFrame{
 		this.verkaufszahlen = verkaufszahlen;
 		buildGui();
 	}
-	private void buildGui () {
+	public void buildGui () {
 		Font font = new Font ("Serif" , Font.BOLD , 30);
 						
 		
@@ -47,7 +47,7 @@ public class JDatensatzEditor extends JFrame{
 		verkaufsPanel.add(lbNord);
 		verkaufsPanel.add(inputNord);
 		
-		JLabel lbSued = new JLabel ("Süd");
+		JLabel lbSued = new JLabel ("Sï¿½d");
 		lbSued.setFont(font);
 		inputSued.setFont(font);
 		verkaufsPanel.add(lbSued);
@@ -73,7 +73,7 @@ public class JDatensatzEditor extends JFrame{
 		actionPanel.add(btnNew);
 		
 		
-		add (actionPanel, BorderLayout.SOUTH);
+		add (actionPanel, BorderLayout.PAGE_END);
 		add (verkaufsPanel, BorderLayout.CENTER);
 		pack();
 		setVisible(true);
@@ -112,7 +112,7 @@ public class JDatensatzEditor extends JFrame{
 		inputUnbenannt.setFont(font);
 		newPanel.add(lbUnbenannt);
 		newPanel.add(inputUnbenannt);
-		add(newPanel, BorderLayout.PAGE_END);
+		add(newPanel, BorderLayout.SOUTH);
 		pack();
 		showVerkaufsZahlen();
 	}
