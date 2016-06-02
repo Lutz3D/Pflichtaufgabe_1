@@ -21,6 +21,7 @@ public class RelativesDiagramm extends StatistischesDiagramm {
 		System.out.println("Gesamt " + gesamtWert);
 		
 		
+		
 
 }
 }

@@ -25,6 +25,7 @@ public class StatistischesDiagramm {
 				
 		
 		}
+		System.out.println("Der Durschnitt beträgt " + daten.durschnitt() + " " + dateneinheit);
 		
 	}
 }

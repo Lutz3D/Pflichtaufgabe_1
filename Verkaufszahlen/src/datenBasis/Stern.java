@@ -58,8 +58,8 @@ public Stern(Datensatz daten) {
 					}			
 					System.out.println("" + dateneintrag + " " + dateneinheit + " " +dateneintrag.relativerAnteilVon(gesamtWert) + "%" + " " + prozentausgabe) ;					}
 					System.out.println("Gesamt " + gesamtWert);
-					System.out.println("Die größte Summe: " + daten.getGroesstenDateneintrag());
-					System.out.println("Der Durschnitt beträgt " + daten.durschnitt());
+					//System.out.println("Die grï¿½ï¿½te Summe: " + daten.getGroesstenDateneintrag());
+					//System.out.println("Der Durschnitt betrï¿½gt " + daten.durschnitt());
 					
 			
 			

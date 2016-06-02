@@ -12,7 +12,7 @@ public class NewEntry implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-			jDatensatzEditor.newEntry();
+			//jDatensatzEditor.newEntry();
 		
 	}
 

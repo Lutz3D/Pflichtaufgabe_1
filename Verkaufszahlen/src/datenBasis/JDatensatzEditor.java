@@ -74,15 +74,29 @@ public class JDatensatzEditor extends JFrame{
 		
 		
 		add (actionPanel, BorderLayout.PAGE_END);
-		add (verkaufsPanel, BorderLayout.CENTER);
+		add (verkaufsPanel, BorderLayout.NORTH);
 		pack();
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		ActionListener hans = new NewEntry (this);
-		btnNew.addActionListener(hans);
-
+		//ActionListener hans = new NewEntry (this);
+		//btnNew.addActionListener(hans);
+		
+		JButton newEntryButton = new JButton("Neuer Eintrag");
+		
+		newEntryButton.addActionListener(new ActionListener()  {
 			
+			public void actionPerformed(ActionEvent e) {
+				verkaufszahlen.add(new Dateneintrag ("Unbekannt", 0));
+				buildGui();
+				pack();
+				
+			}
+			
+		});
+		getContentPane().add(newEntryButton, BorderLayout.CENTER);
+
+		
 	}
 	
 	public void addVerkaufsZahlen (Datensatz z) {
@@ -101,7 +115,9 @@ public class JDatensatzEditor extends JFrame{
 		
 	}
 	
-	public void newEntry () {
+	
+	/*public void newEntry () {
+		int i = 0;
 		Font font = new Font ("Serif" , Font.BOLD , 30);
 		JPanel newPanel = new JPanel ();
 		BoxLayout bl2 = new BoxLayout (newPanel, BoxLayout.Y_AXIS);
@@ -112,10 +128,12 @@ public class JDatensatzEditor extends JFrame{
 		inputUnbenannt.setFont(font);
 		newPanel.add(lbUnbenannt);
 		newPanel.add(inputUnbenannt);
-		add(newPanel, BorderLayout.SOUTH);
+		add(newPanel, BorderLayout.CENTER);
 		pack();
 		showVerkaufsZahlen();
-	}
+	}*/
+	
+	
 	
 
 

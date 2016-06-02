@@ -33,21 +33,7 @@ public class Datensatz {
 		return sum;
 	}
 	
-	public Dateneintrag getGroesstenDateneintrag() {
-		int anzahlDaten = getAnzahlDateneintrage();
-		Dateneintrag groesterDateneintrag;
-		groesterDateneintrag = getDateneintrag(0);
-		for (int i = 1; i< anzahlDaten; i++) {
-			Dateneintrag aktuellerDateneintrag;
-			aktuellerDateneintrag = getDateneintrag(i);
-			if (groesterDateneintrag.getDatenwert() < aktuellerDateneintrag.getDatenwert()) {
-				groesterDateneintrag = aktuellerDateneintrag;
-			}
-		}
-				return groesterDateneintrag;
-			
-		
-	}
+
 	
 	public int durschnitt () {
 		int gesamt = getGesamtwert();
@@ -58,12 +44,31 @@ public class Datensatz {
 
 	}
 	
-public boolean istVorhanden(String suchbegriff) {
-	for (Dateneintrag each: daten) {
-		if (each.getDatenname() == suchbegriff) return true;
-	}
-	return false;
+	public boolean istVorhanden(String suchbegriff) {
+        for (Dateneintrag each: daten) {
+                if (each.getDatenname() == suchbegriff) return true;
+        }
+        return false;
 }
+
+        public Dateneintrag getGroesstenDateneintrag() {
+                int anzahlDaten = getAnzahlDateneintrage();
+                Dateneintrag groesterDateneintrag;
+                groesterDateneintrag = getDateneintrag(0);
+                for (int i = 1; i< anzahlDaten; i++) {
+                        Dateneintrag aktuellerDateneintrag;
+                        aktuellerDateneintrag = getDateneintrag(i);
+                        if (groesterDateneintrag.getDatenwert() < aktuellerDateneintrag.getDatenwert()) {
+                                groesterDateneintrag = aktuellerDateneintrag;
+                        }
+                }
+                                return groesterDateneintrag;
+
+
+        }
+
+	
+
 
 
 }
